@@ -22,26 +22,15 @@ The activity demonstrates a highly likely compromise of the Administrator accoun
 
 ## Findings
 
-### Time: 
-
-- First Activity - 16 Mar 2026 05:22:29
-- Last Activity - 16 Mar 2026 18:40:07
-- Alert Generated - 16 Mar 2026 05:25:52
-
-### Incident:
-
-- Unauthorised account creation followed by privilege escalation and persistence activity
-
-### Affected Accounts: 
-
-- Administrator (initiating account)
-- system32 (malicious account created)
-- Guest (account modified and elevated)
-
-### Affected Hosts:
-
-- mts-contractorpc1
-- mts-dc.mts.local
+Host: mts-contractorpc1
+User: Administrator (compromised)
+Created Accounts: system32, Guest
+IPs: 45.77.x.x (multiple)
+Technique: T1136, T1098, T1021.001
+Key Commands:
+- net user /add
+- net localgroup administrators /add
+- WMIC PasswordExpires=FALSE
 
 ---
 
